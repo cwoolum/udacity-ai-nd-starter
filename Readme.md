@@ -16,6 +16,6 @@ Because this is operating in a container, you'll need to do a but of extra confi
 
 2. Make sure that XcXsrv is running
 
-3. In the command line in VS Code, run the command `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0`. This will allow the container to connect to the XServer instance in the host operating system.
+3. Get the ip address for the host machine. Open a command prompt and run `ipconfig | findstr /C:Address`. You want the `IPv4 Address`. If there are multiple, it's most likely the one that starts with `192.168.`. Run the command `export DISPLAY=IP_ADDRESS:0.0` where `IP_ADDRESS` is the one you got from the previous command.
 
 You should now be able to run all of the Pacman simulations!
